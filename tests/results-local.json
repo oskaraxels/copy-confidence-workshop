@@ -1,9 +1,9 @@
 {
  "label": "local",
  "base": "http://127.0.0.1:18766/",
- "passed": 148,
+ "passed": 149,
  "total": 149,
- "seconds": 168,
+ "seconds": 146,
  "results": [
   {
    "test": "[1366x768] content counts: \u2265150 reps, \u226560 lab items, 25\u201330 belief cards",
@@ -746,9 +746,9 @@
    "detail": "[]"
   },
   {
-   "test": "[links] all 76 source links resolve (4 bot-blocked by known hosts, allowed)",
-   "pass": false,
-   "detail": "{'https://commons.wikimedia.org/wiki/File:You_press_the_button,_we_do_the_rest_(Kodak': 'chrome 429', 'https://www.bloomberg.com/news/articles/2012-11-29/the-science-behind-those-obama-campaign-e-mails': 'chrome 403', 'https://www.loc.gov/item/23009362/': 'chrome 403'}"
+   "test": "[links] all 75 source links resolve (6 bot-blocked by known hosts, allowed)",
+   "pass": true,
+   "detail": "{}"
   }
  ]
 }
