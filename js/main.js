@@ -1,0 +1,51 @@
+/* Shell: bottom-right action bar, router, home, daily flow, review, dashboard, checker, data, keyboard */
+let BAR={btns:[],next:null,opts:{}};
+function setBar(btns,next,opts){BAR={btns:btns||[],next,opts:opts||{}};const wrap=$("#abBtns");
+ const all=BAR.btns.map(b=>`<button class="btn ${b.primary?"":"ghost"} ${b.cls||""}" id="${b.id}" ${b.key?`data-key="${b.key}"`:""} title="${b.key?"Key: "+(b.key==="0"?"0 (=10)":b.key.toUpperCase()):""}">${esc(b.label)}${b.key&&!/rate/.test(b.cls||"")?` <span class="k">${b.key.toUpperCase()}</span>`:""}</button>`).join("");
+ const nx=next?`<button class="btn nextbtn ${next.primary?"":"ghost"}" id="btnNext" title="Enter / →">${esc(next.label)} <span class="k">${next.primary?"↵":"→"}</span></button>`:"";
+ wrap.innerHTML=all+nx;$("#abInfo").innerHTML=BAR.opts.info||(BAR.opts.back?`<button class="btn ghost small" id="btnBack" title="←">← Back</button>`:"");
+ if(BAR.opts.info&&BAR.opts.back)$("#abInfo").innerHTML=`<button class="btn ghost small" id="btnBack" title="←">← Back</button> `+BAR.opts.info;
+ BAR.btns.forEach(b=>{$("#"+b.id).onclick=b.on;});if(next)$("#btnNext").onclick=next.on;const bk=$("#btnBack");if(bk)bk.onclick=BAR.opts.back;updateTop();}
+function barPrimary(){const p=BAR.btns.find(b=>b.primary);if(p)return p.on();if(BAR.next)BAR.next.on();}
+function go(h){if(location.hash===h)route();else location.hash=h;}
+function setNav(id){$$("#topbar nav a").forEach(a=>a.classList.toggle("on",a.id===id));}
+/* daily flow: 1 belief + 3 ads + 5 reps (a suggestion, never a limit) */
+function buildFlow(){const items=[];const t=today();
+ const bel=BEL.slice().sort((a,b)=>((S.beliefs[a.id]||{}).ratings||[]).length-((S.beliefs[b.id]||{}).ratings||[]).length||((S.beliefs[a.id]||{}).done?1:0)-((S.beliefs[b.id]||{}).done?1:0))[0];items.push("b:"+bel.id);
+ const due=dueKeys();due.filter(k=>k[0]==="a").slice(0,3).forEach(k=>items.push(k));ADS.filter(a=>!S.lab[a.id]||S.lab[a.id].pick==null).forEach(a=>{if(items.filter(k=>k[0]==="a").length<3&&!items.includes("a:"+a.id))items.push("a:"+a.id);});
+ due.filter(k=>k[0]==="w").slice(0,2).forEach(k=>items.push(k));REPS.forEach(r=>{if(items.filter(k=>k[0]==="w").length<5&&unlocked(r.level)&&!repDone(r.id)&&!items.includes("w:"+r.id))items.push("w:"+r.id);});
+ const nA=()=>items.filter(k=>k[0]==="a").length,nW=()=>items.filter(k=>k[0]==="w").length;
+ if(nA()<3)ADS.filter(a=>a.answer).slice().sort((x,y)=>((S.lab[x.id]||{}).correct?1:0)-((S.lab[y.id]||{}).correct?1:0)||((S.lab[x.id]||{}).at||0)-((S.lab[y.id]||{}).at||0)).forEach(a=>{if(nA()<3&&!items.includes("a:"+a.id))items.push("a:"+a.id);});
+ if(nW()<5)REPS.filter(r=>unlocked(r.level)).slice().sort((x,y)=>(repBest(x.id)||0)-(repBest(y.id)||0)).forEach(r=>{if(nW()<5&&!items.includes("w:"+r.id))items.push("w:"+r.id);});
+ S.flow={date:t,items,i:0};save();return S.flow;}
+function flowHref(k){return k[0]==="b"?`#/b/${k.slice(2)}`:keyHref(k);}
+function curKey(){const h=location.hash.split("?")[0];const m=h.match(/^#\/(w|a|b)\/(.+)$/);return m?`${m[1]}:${m[2]}`:null;}
+function inFlow(){return !!(S.flow&&S.flow.date===today()&&S.flow.items[S.flow.i]===curKey());}
+function flowCrumb(){return inFlow()?` <span class="flowtag" id="flowTag">Today's flow ${S.flow.i+1}/${S.flow.items.length}</span>`:"";}
+function flowStart(){const f=buildFlow();go(flowHref(f.items[0]));}
+function flowNext(){S.flow.i++;save();if(S.flow.i>=S.flow.items.length){S.flow=null;save();toast("🎉 Today's flow done — keep going if you like, nothing is capped");go("#/");return;}go(flowHref(S.flow.items[S.flow.i]));}
+/* top bar */
+function overall(){const d=REPS.filter(r=>repDone(r.id)).length+ADS.filter(a=>S.lab[a.id]&&S.lab[a.id].pick!=null).length+BEL.filter(b=>(S.beliefs[b.id]||{}).done).length;const t=REPS.length+ADS.length+BEL.length;return [d,t];}
+function updateTop(){const [d,t]=overall();const tc=todayCount();const e=$("#topToday");if(!e)return;e.innerHTML=`Today <b id="topTodayN">${tc}</b>/${S.goal} · 🔥 <b id="topStreak">${streak()}</b>`;e.classList.toggle("met",tc>=S.goal);$("#topProgBar").style.width=(100*d/t)+"%";$("#topProgTxt").textContent=`${Math.round(100*d/t)}%`;const dq=dueKeys().length;$("#navDue").textContent=dq?dq:"";$("#navDue").style.display=dq?"":"none";}
+/* home */
+function viewHome(){setNav("navHome");const [d,t]=overall(),tc=todayCount();const rd=REPS.filter(r=>repDone(r.id)).length,ad=ADS.filter(a=>S.lab[a.id]&&S.lab[a.id].pick!=null).length,bd=BEL.filter(b=>(S.beliefs[b.id]||{}).done).length;const fl=S.flow&&S.flow.date===today()?S.flow:null;
+ let h=`<div class="wrap" id="homeView"><h1>Copy &amp; Confidence Workshop</h1><p class="sub">Three parts: <strong>write</strong> ads and cold emails yourself and get instant feedback, <strong>judge</strong> real ads and see why they work, and <strong>rebuild</strong> the beliefs that make selling feel scary. Built on plain salesmanship (Hopkins, Ogilvy, Estée Lauder's give-first sampling): one reader, specifics, a clear offer, one action. No AI, no account — everything stays in this browser.</p>
+ <div class="card today" id="todayCard"><div class="todayrow"><div><div class="sub">Today</div><div class="stat"><span id="homeToday">${tc}</span> / <span id="homeGoal">${S.goal}</span></div><div class="bar big"><div style="width:${Math.min(100,100*tc/S.goal)}%"></div></div><label class="sub goalset">Daily target <input id="goalInput" type="number" min="1" max="500" value="${S.goal}"> (a target, not a limit)</label></div>
+ <div><div class="sub">Streak</div><div class="stat">🔥 <span id="homeStreak">${streak()}</span> day${streak()===1?"":"s"}</div><div class="sub">Days in a row you hit your target.</div></div>
+ <div><div class="sub">Overall</div><div class="stat" id="homeOverall">${Math.round(100*d/t)}%</div><div class="bar"><div style="width:${100*d/t}%"></div></div><div class="sub">${d} of ${t} items</div></div></div></div>
+ <div class="card flow" id="flowCard"><h2 style="margin-top:0">Suggested ~20-minute flow</h2><p>1 belief card (~5 min) → 3 real ads (~5 min) → 5 writing reps (~10 min). Optional — do more, fewer, or anything in any order.</p>${fl?`<p class="sub">In progress: ${fl.i}/${fl.items.length} done.</p><a class="btn big" id="btnFlow" href="${flowHref(fl.items[fl.i])}">▶ Continue today's flow</a>`:`<button class="btn big" id="btnFlow">▶ Start today's flow</button>`}</div>
+ <div class="cards parts"><div class="card part" id="partWork"><h2>✍ Copy Workshop</h2><p>${REPS.length} reps in 6 levels: headlines → hooks → body → offers → CTAs → full ad / full email. Write, check, rewrite, compare with model answers.</p><div class="bar"><div style="width:${100*rd/REPS.length}%"></div></div><p class="sub">${rd}/${REPS.length} done</p><a class="btn" href="#/workshop">Open workshop</a> <a class="btn ghost" href="#/own">Own brief</a></div>
+ <div class="card part" id="partLab"><h2>🔎 Real Ads Lab</h2><p>${ADS.length} items: good or bad, then a breakdown of headline, hook, image, offer and CTA. Every item labelled real (with source) or teaching.</p><div class="bar"><div style="width:${100*ad/ADS.length}%"></div></div><p class="sub">${ad}/${ADS.length} judged · accuracy ${pct(labAcc())}</p><a class="btn" href="#/lab">Open lab</a></div>
+ <div class="card part" id="partBel"><h2>🌱 Belief Builder</h2><p>${BEL.length} cards on selling, sales calls, price, rejection — and comparing yourself to friends, discipline and worth. Unlimited, any order.</p><div class="bar"><div style="width:${100*bd/BEL.length}%"></div></div><p class="sub">${bd}/${BEL.length} done · ${todayBy("b")} today</p><a class="btn" href="#/beliefs">Open beliefs</a></div></div>
+ <h2>Evidence labels</h2><ul class="legend">${Object.keys(D.evl).map(k=>`<li><span class="${evClass(k)}">${esc(D.evl[k])}</span></li>`).join("")}</ul>
+ <h2>Keyboard</h2><p id="kbdHelp">${KBD.map(([k,v])=>`<span class="kbd">${k}</span> ${v}`).join(" · ")}</p>
+ <h2>Your data</h2><p class="sub">Saved only in this browser (localStorage key <code>${KEY}</code>). Export a backup now and then.</p>
+ <button class="btn ghost" id="btnExport">⬇ Export progress JSON</button> <label class="btn ghost" style="display:inline-block">⬆ Import JSON<input type="file" id="fileImport" accept="application/json,.json" hidden></label> <button class="btn ghost danger" id="btnReset">Reset all progress</button>
+ <p class="sub" style="margin-top:24px">All sources: <a href="https://github.com/oskaraxels/copy-confidence-workshop/blob/main/SOURCES.md" target="_blank" rel="noopener">SOURCES.md</a> · Sister site: <a href="https://oskaraxels.github.io/marketing-playground/" target="_blank" rel="noopener">Marketing Taste Playground</a></p></div>`;
+ $("#main").innerHTML=h;const g=$("#goalInput");g.onchange=()=>{S.goal=Math.max(1,Math.min(500,parseInt(g.value,10)||9));save();toast(`Daily target: ${S.goal}`);viewHome();};
+ const fb=$("#btnFlow");if(fb.tagName==="BUTTON")fb.onclick=flowStart;
+ $("#btnExport").onclick=exportJSON;$("#fileImport").onchange=importJSON;$("#btnReset").onclick=()=>{if(confirm("Reset ALL progress, copy bank, ratings and streaks? This cannot be undone.")){S=blank();save();toast("Progress reset");route();}};
+ setBar([{id:"btnHomeLab",label:"Ads Lab",cls:"ghost",on:()=>go("#/lab")},{id:"btnHomeBel",label:"Beliefs",cls:"ghost",on:()=>go("#/beliefs")}],{label:fl?"Continue flow →":"Start today's flow →",primary:true,on:()=>fl?go(flowHref(fl.items[fl.i])):flowStart()});}
+const KBD=[["Enter","main action (check → reveal → next)"],["Ctrl+Enter","main action while typing"],["1 / 2","good / bad (Ads Lab)"],["1–9, 0","rate a belief (0 = 10)"],["C","check"],["R","reveal models"],["M","mark done"],["B","save to swipe file"],["T","timer (level 6)"],["← / →","back / next"],["F","focus mode"],["Esc","exit focus / leave a text box"],["?","show shortcuts"]];
+function exportJSON(){download("copy-confidence-progress.json","application/json",JSON.stringify({app:"copy-confidence-workshop",exported:new Date().toISOString(),state:S},null,1));}
+function importJSON(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const j=JSON.parse(rd.result);const st=j.state||j;if(st.v!==1||st.app!=="ccw")throw new Error("bad");S=migrate(st);save();toast("Progress imported");route();}catch(err){toast("Could not import: not a valid progress file");}};rd.readAsText(f);}
