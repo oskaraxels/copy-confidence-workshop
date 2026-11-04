@@ -19,3 +19,4 @@ localStorage key: ccw-progress-v1 (playground uses mtp-progress-v1).
 - [x] 17:35 tests/test_site.py written (148 checks/both viewports); local 146/148 -> fixed own-brief title; README + .nojekyll done. Next: full local run with links+shots, then deploy.
 - [x] 17:50 repo oskaraxels/copy-confidence-workshop created+pushed (branch master), Pages enabled. Local full run 148/149 (link regex fix after).
 - [x] 18:00 local 149/149 incl. links + shots. Live run next.
+- [x] 18:12 LIVE 149/149 passed. Done; final report sent.

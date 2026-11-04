@@ -1,0 +1,754 @@
+{
+ "label": "live",
+ "base": "https://oskaraxels.github.io/copy-confidence-workshop/",
+ "passed": 149,
+ "total": 149,
+ "seconds": 141,
+ "results": [
+  {
+   "test": "[1366x768] content counts: \u2265150 reps, \u226560 lab items, 25\u201330 belief cards",
+   "pass": true,
+   "detail": "(167, 74, 28)"
+  },
+  {
+   "test": "[1366x768] all 6 levels, 14 elements and 5 rep modes present",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] lab mix: real 51, live 15, teaching 8 \u2014 every item has an evidence label",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] localStorage key is ccw-progress-v1 (not the playground's)",
+   "pass": true,
+   "detail": "ccw-progress-v1"
+  },
+  {
+   "test": "[1366x768] Atkinson Hyperlegible loaded and applied",
+   "pass": true,
+   "detail": "(True, True, '\"Atkinson Hyperlegible\", system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif')"
+  },
+  {
+   "test": "[1366x768] white background",
+   "pass": true,
+   "detail": "rgb(255, 255, 255)"
+  },
+  {
+   "test": "[1366x768] home shows the 3 parts, daily flow, streak and overall progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] no horizontal scroll: home",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] home: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1093.671875, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] level 2 starts locked",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] 5 strong level-1 headlines score \u226570",
+   "pass": true,
+   "detail": "[100, 100, 86, 100, 100]"
+  },
+  {
+   "test": "[1366x768] level 2 unlocks after 5 reps \u226570",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] manual override unlocks level 3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] no horizontal scroll: workshop",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] rep shows brief + 5 guided questions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] Ctrl+Enter checks the draft; weak draft scores low with prioritised fixes",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "test": "[1366x768] checker includes 'uses your guided answers' rule",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] writing rep (after check): Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1174.25, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] writing rep (after check): #btnReveal sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 969.390625, 'r': 1166.25, 't': 706.265625, 'b': 757.703125, 'w': 1366, 'h': 768, 'vis': True}, {'l': 1174.25, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1366x768] Enter checks the rewrite; before/after side by side with higher score",
+   "pass": true,
+   "detail": "(33, 81)"
+  },
+  {
+   "test": "[1366x768] Enter reveals 3\u20135 model answers, each with a 'why it works'",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "test": "[1366x768] model answers use different formulas",
+   "pass": true,
+   "detail": "['1. Without the hassle', '2. Risk reversal', '3. Reader + offer', '4. Offer + place']"
+  },
+  {
+   "test": "[1366x768] \u2605 Save on a model adds it to the swipe file",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] Enter after reveal goes to the next rep",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] \u2190 goes back",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] M toggles done",
+   "pass": true,
+   "detail": "(True, False, '#/w/w1-007', 'MAIN')"
+  },
+  {
+   "test": "[1366x768] C checks and R reveals",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] mode 'formula' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] mode 'ten' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] mode 'fix' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] mode 'steal' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] T starts the level-6 timer",
+   "pass": true,
+   "detail": "\u23f1 9:59"
+  },
+  {
+   "test": "[1366x768] own-brief mode: guided steps + checker + template models built from MY fields",
+   "pass": true,
+   "detail": "('Meta ad headline \u2014 Testklinik Odenplan', '', 'Solna', 'Solnabor: tandkontroll f\u00f6r 695 kr Tandkontroll f\u00f6r 695 kr i Solna Tandkontroll utan att sitta i telefonk\u00f6 Tandkontroll f\u00f6r 695 kr. Du f\u00e5r veta priset innan vi g\u00f6r n\u00e5got mer.')"
+  },
+  {
+   "test": "[1366x768] every one of 167 reps renders, checks and reveals 3\u20135 models",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1366x768] every one of 74 lab items renders; 1/2 answers; breakdown shows; Next turns primary",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1366x768] Ads Lab: Next sits bottom-right right after Good/Bad on every item",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] Ads Lab before answering: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1198, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] Ads Lab before answering: #btnBad sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1060.921875, 'r': 1190, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, {'l': 1198, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, 8)"
+  },
+  {
+   "test": "[1366x768] Ads Lab after answering: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1164.65625, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] Ads Lab after answering: #btnBad sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1027.578125, 'r': 1156.65625, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, {'l': 1164.65625, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1366x768] B saves a lab item to the swipe file",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] \u2192 goes to the next lab item",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] no horizontal scroll: Ads Lab item",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] missed lab items are scheduled for review tomorrow",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "test": "[1366x768] next day: missed items are due in Review",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "test": "[1366x768] every one of 28 belief cards renders (visual, steps, action, script, sources); before/after ratings save; chart draws; M marks done",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1366x768] same belief can be done again the same day (unlimited); chart has 2 sessions",
+   "pass": true,
+   "detail": "2"
+  },
+  {
+   "test": "[1366x768] belief card: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1166.6875, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] belief card: #rate-10 sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1116.6875, 'r': 1158.6875, 't': 706.265625, 'b': 757.703125, 'w': 1366, 'h': 768, 'vis': True}, {'l': 1166.6875, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1366x768] no horizontal scroll: belief card",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] nothing is capped: today's count (270) can exceed the daily target",
+   "pass": true,
+   "detail": "270"
+  },
+  {
+   "test": "[1366x768] streak counts today once the target is hit",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] belief list shows all cards and done marks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] copy bank saved every checked piece with a score; chart drawn",
+   "pass": true,
+   "detail": "182"
+  },
+  {
+   "test": "[1366x768] copy bank filter works",
+   "pass": true,
+   "detail": "(17, 182)"
+  },
+  {
+   "test": "[1366x768] copy bank export .json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] copy bank export .csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] copy bank export .md",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] swipe file lists saved items",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] dashboard: calendar, element table, levels, lab accuracy, beliefs",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] no horizontal scroll: dashboard",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1366x768] dashboard: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1093.671875, 'r': 1348, 't': 705.96875, 'b': 758, 'w': 1366, 'h': 768, 'vis': True}"
+  },
+  {
+   "test": "[1366x768] free checker flags a policy-breaking clinic ad (score capped \u2264 40)",
+   "pass": true,
+   "detail": "40"
+  },
+  {
+   "test": "[1366x768] checker scoring: strong > weak for headline, spam subject low, interest ask high, lazy follow-up low",
+   "pass": true,
+   "detail": "[100, 50, 57, 100, 44]"
+  },
+  {
+   "test": "[1366x768] ? opens the shortcuts dialog",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] Esc closes it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] F enters focus mode",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] Esc exits focus mode",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] daily flow = 1 belief + 3 ads + 5 reps",
+   "pass": true,
+   "detail": "['b', 'a', 'a', 'a', 'w', 'w', 'w', 'w', 'w']"
+  },
+  {
+   "test": "[1366x768] flow Next moves to the first ad",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] reset clears progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] import restores progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] progress survives a reload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1366x768] no console errors",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1440x900] content counts: \u2265150 reps, \u226560 lab items, 25\u201330 belief cards",
+   "pass": true,
+   "detail": "(167, 74, 28)"
+  },
+  {
+   "test": "[1440x900] all 6 levels, 14 elements and 5 rep modes present",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] lab mix: real 51, live 15, teaching 8 \u2014 every item has an evidence label",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] localStorage key is ccw-progress-v1 (not the playground's)",
+   "pass": true,
+   "detail": "ccw-progress-v1"
+  },
+  {
+   "test": "[1440x900] Atkinson Hyperlegible loaded and applied",
+   "pass": true,
+   "detail": "(True, True, '\"Atkinson Hyperlegible\", system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif')"
+  },
+  {
+   "test": "[1440x900] white background",
+   "pass": true,
+   "detail": "rgb(255, 255, 255)"
+  },
+  {
+   "test": "[1440x900] home shows the 3 parts, daily flow, streak and overall progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] no horizontal scroll: home",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] home: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1167.671875, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] level 2 starts locked",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] 5 strong level-1 headlines score \u226570",
+   "pass": true,
+   "detail": "[100, 100, 86, 100, 100]"
+  },
+  {
+   "test": "[1440x900] level 2 unlocks after 5 reps \u226570",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] manual override unlocks level 3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] no horizontal scroll: workshop",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] rep shows brief + 5 guided questions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] Ctrl+Enter checks the draft; weak draft scores low with prioritised fixes",
+   "pass": true,
+   "detail": "33"
+  },
+  {
+   "test": "[1440x900] checker includes 'uses your guided answers' rule",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] writing rep (after check): Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1248.25, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] writing rep (after check): #btnReveal sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1043.390625, 'r': 1240.25, 't': 838.265625, 'b': 889.703125, 'w': 1440, 'h': 900, 'vis': True}, {'l': 1248.25, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1440x900] Enter checks the rewrite; before/after side by side with higher score",
+   "pass": true,
+   "detail": "(33, 81)"
+  },
+  {
+   "test": "[1440x900] Enter reveals 3\u20135 model answers, each with a 'why it works'",
+   "pass": true,
+   "detail": "4"
+  },
+  {
+   "test": "[1440x900] model answers use different formulas",
+   "pass": true,
+   "detail": "['1. Without the hassle', '2. Risk reversal', '3. Reader + offer', '4. Offer + place']"
+  },
+  {
+   "test": "[1440x900] \u2605 Save on a model adds it to the swipe file",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] Enter after reveal goes to the next rep",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] \u2190 goes back",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] M toggles done",
+   "pass": true,
+   "detail": "(True, False, '#/w/w1-007', 'MAIN')"
+  },
+  {
+   "test": "[1440x900] C checks and R reveals",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] mode 'formula' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] mode 'ten' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] mode 'fix' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] mode 'steal' works (write \u2192 check \u2192 reveal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] T starts the level-6 timer",
+   "pass": true,
+   "detail": "\u23f1 9:59"
+  },
+  {
+   "test": "[1440x900] own-brief mode: guided steps + checker + template models built from MY fields",
+   "pass": true,
+   "detail": "('Meta ad headline \u2014 Testklinik Odenplan', '', 'Solna', 'Solnabor: tandkontroll f\u00f6r 695 kr Tandkontroll f\u00f6r 695 kr i Solna Tandkontroll utan att sitta i telefonk\u00f6 Tandkontroll f\u00f6r 695 kr. Du f\u00e5r veta priset innan vi g\u00f6r n\u00e5got mer.')"
+  },
+  {
+   "test": "[1440x900] every one of 167 reps renders, checks and reveals 3\u20135 models",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1440x900] every one of 74 lab items renders; 1/2 answers; breakdown shows; Next turns primary",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1440x900] Ads Lab: Next sits bottom-right right after Good/Bad on every item",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] Ads Lab before answering: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1272, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] Ads Lab before answering: #btnBad sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1134.921875, 'r': 1264, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, {'l': 1272, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, 8)"
+  },
+  {
+   "test": "[1440x900] Ads Lab after answering: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1238.65625, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] Ads Lab after answering: #btnBad sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1101.578125, 'r': 1230.65625, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, {'l': 1238.65625, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1440x900] B saves a lab item to the swipe file",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] \u2192 goes to the next lab item",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] no horizontal scroll: Ads Lab item",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] missed lab items are scheduled for review tomorrow",
+   "pass": true,
+   "detail": "20"
+  },
+  {
+   "test": "[1440x900] next day: missed items are due in Review",
+   "pass": true,
+   "detail": "21"
+  },
+  {
+   "test": "[1440x900] every one of 28 belief cards renders (visual, steps, action, script, sources); before/after ratings save; chart draws; M marks done",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[1440x900] same belief can be done again the same day (unlimited); chart has 2 sessions",
+   "pass": true,
+   "detail": "2"
+  },
+  {
+   "test": "[1440x900] belief card: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1240.6875, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] belief card: #rate-10 sits right next to Next (gap \u2264 16px, same row)",
+   "pass": true,
+   "detail": "({'l': 1190.6875, 'r': 1232.6875, 't': 838.265625, 'b': 889.703125, 'w': 1440, 'h': 900, 'vis': True}, {'l': 1240.6875, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}, 8.0)"
+  },
+  {
+   "test": "[1440x900] no horizontal scroll: belief card",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] nothing is capped: today's count (270) can exceed the daily target",
+   "pass": true,
+   "detail": "270"
+  },
+  {
+   "test": "[1440x900] streak counts today once the target is hit",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] belief list shows all cards and done marks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] copy bank saved every checked piece with a score; chart drawn",
+   "pass": true,
+   "detail": "182"
+  },
+  {
+   "test": "[1440x900] copy bank filter works",
+   "pass": true,
+   "detail": "(17, 182)"
+  },
+  {
+   "test": "[1440x900] copy bank export .json",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] copy bank export .csv",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] copy bank export .md",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] swipe file lists saved items",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] dashboard: calendar, element table, levels, lab accuracy, beliefs",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] no horizontal scroll: dashboard",
+   "pass": true,
+   "detail": "0"
+  },
+  {
+   "test": "[1440x900] dashboard: Next button is in the bottom-right corner",
+   "pass": true,
+   "detail": "{'l': 1167.671875, 'r': 1422, 't': 837.96875, 'b': 890, 'w': 1440, 'h': 900, 'vis': True}"
+  },
+  {
+   "test": "[1440x900] free checker flags a policy-breaking clinic ad (score capped \u2264 40)",
+   "pass": true,
+   "detail": "40"
+  },
+  {
+   "test": "[1440x900] checker scoring: strong > weak for headline, spam subject low, interest ask high, lazy follow-up low",
+   "pass": true,
+   "detail": "[100, 50, 57, 100, 44]"
+  },
+  {
+   "test": "[1440x900] ? opens the shortcuts dialog",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] Esc closes it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] F enters focus mode",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] Esc exits focus mode",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] daily flow = 1 belief + 3 ads + 5 reps",
+   "pass": true,
+   "detail": "['b', 'a', 'a', 'a', 'w', 'w', 'w', 'w', 'w']"
+  },
+  {
+   "test": "[1440x900] flow Next moves to the first ad",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] reset clears progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] import restores progress",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] progress survives a reload",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "test": "[1440x900] no console errors",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "test": "[links] all 75 source links resolve (6 bot-blocked by known hosts, allowed)",
+   "pass": true,
+   "detail": "{}"
+  }
+ ]
+}
